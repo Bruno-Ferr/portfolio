@@ -12,15 +12,69 @@ import img5 from '@/../public/icon_typescript.png'
 import img6 from '@/../public/icon _MySQL_.svg'
 import img7 from '@/../public/icon _tailwindcss_.svg'
 import img8 from '@/../public/icon _ethereum_.svg'
+import aposentaEu from '@/../public/AposentaEu-login.png'
+import SkillBox from "@/components/skillsBox";
+import MyProject from "@/components/myProjects";
+import { EnvelopeSimple, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
+
+const skillList = [{
+  image: img1,
+  skillName: 'Next.js',
+  isVertical: false
+},{
+  image: img2,
+  skillName: 'Node.js',
+  isVertical: true
+},{
+  image: img3,
+  skillName: 'React',
+  isVertical: false
+},{
+  image: img4,
+  skillName: 'Solidity',
+  isVertical: true
+},{
+  image: img5,
+  skillName: 'Typescript',
+  isVertical: false
+},{
+  image: img6,
+  skillName: 'MySQL',
+  isVertical: true
+},{
+  image: img7,
+  skillName: 'Ethereum',
+  isVertical: false
+},{
+  image: img8,
+  skillName: 'Tailwind',
+  isVertical: true
+},]
+
+const myProjects = [{
+  name: "AposentaEu",
+  description: "A project to calculate social security. Create from scratch, integrated with payment system.",
+  techs: ["Next.js", "Typescript", "Node", "MySQL", "Stripe"],
+  site: "",
+  github: "https://github.com/Bruno-Ferr/aposentaEuClient",
+  img: aposentaEu,
+}, {
+  name: "Loyalty App",
+  description: "A web3 project within a loyalty contract, E20Token created from scratch.",
+  techs: ["Next.js", "Typescript", "Node", "Hardhat", "Solidity", "TailwindCSS"],
+  site: "",
+  github: "https://github.com/Bruno-Ferr/aposentaEuClient",
+  img: aposentaEu,
+}]
 
 export default function Home() {
-  
-
-
   return (
     <main>
       <div className="background w-full h-screen bg-no-repeat bg-cover flex items-center">
         <div className="max-w-screen-xl m-auto">
+            <button className="absolute flex items-center text-lg top-5 right-[20rem]">
+              <Globe size={28} /> | EN
+            </button>
           <div className="h-fit w-fit py-8 px-36 bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-5"> 
             <motion.div
                initial={{x: -20, opacity: 0}}
@@ -53,6 +107,7 @@ export default function Home() {
         </div>
         <div className="w-1/3"></div> 
       </div>
+      {/*######################### Skills ######################### */}
       <div className="relative w-full bg-neutral-900 bg-no-repeat bg-cover text-white">
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit">
@@ -62,64 +117,22 @@ export default function Home() {
               transition={{duration: 0.5, delay:0.25}}
             >
               <h2 className="font-bold text-[140px] uppercase text-neutral-800 leading-none">Skills</h2>
-              <p className="absolute bottom-0 right-0 mb-6 mr-4 text-xl font-medium text-neutral-200">My focused technologies</p>
             </motion.div>
 
           </div>
           <div className="flex p-28 justify-center">
             <div className="grid grid-cols-5 gap-6 items-center max-w-screen-lg m-auto">
-              <div className="relative">
-                <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                  <Image height={72} width={72} src={img1} alt="next.js icon" />
-                  <p className="text-lg font-semibold absolute uppercase">Next.js</p>
-                </div>
-                <motion.div
-                  variants={{
-                    hidden: { left: 0 },
-                    visible: { left: "-100%"}
-                  }}
-                  initial={{left: 0, width: "100%"}}
-                  animate={{width: "0%", transitionEnd: {display: "none", opacity: 0}}}
-                  transition={{
-                    duration: 0.5, ease: 'easeIn'
-                  }}
-                  
-                  className="absolute top-0 bg-purple-700 w-36 h-28"
-                />
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={72} width={72} src={img2} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">Node.js</p>
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={72} width={72} src={img3} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">React</p>
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={52} width={52} src={img4} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">Solidity</p>
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={72} width={72} src={img5} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">Typescript</p>
-              </div>
-              <div></div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={72} width={72} src={img6} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">MySQL</p>
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={72} width={72} src={img7} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">Tailwind</p>
-              </div>
-              <div className="border rounded-lg w-36 h-28 flex items-center justify-center text-transparent hover:bg-white hover:text-black relative">
-                <Image height={52} width={52} src={img8} alt="next.js icon" />
-                <p className="text-lg font-semibold absolute uppercase">Ethereum</p>
-              </div>
+              {skillList.map((skill, index) => {
+                const additionalClass = index == 5 ? "col-start-2" : "";
+                return (
+                  <SkillBox image={skill.image} skillName={skill.skillName} isVertical={skill.isVertical} additionalClass={additionalClass}/>
+                )
+              })}
             </div>
           </div>
         </div>
       </div> 
+      {/*######################### Projects ######################### */}
       <div className="relative w-full h-screen bg-black bg-no-repeat bg-cover text-center text-white">
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit">
@@ -129,89 +142,47 @@ export default function Home() {
             transition={{duration: 0.5, delay:0.25}}
           >
             <h2 className="font-bold text-[140px] uppercase text-neutral-800 leading-none font-inter">Projects</h2>
-            <p className="absolute bottom-0 right-0 mb-6 mr-4 text-xl font-medium text-neutral-200">Take a look at my projects</p>
           </motion.div>
           </div>
           <div className="flex items-center justify-center mt-12 gap-3">
-            <div className="p-4 border max-w-sm">
-              <Image height={16} width={16} className="w-72 h-56 " src="" alt="" />
-              <div className="text-start mt-4">
-                <h3 className="text-lg font-semibold">AposentaEu</h3>
-                <p>A project to calculate social previdence. Create from scratch, integrated with payment system.</p>
-              </div>
-              <div className="flex mt-4 gap-2">
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Next.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Node.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Postgress</p>
-              </div>
-              <div className="mt-8">
-                <button className="rounded-sm border border-gray-500 bg-gradient-to-br from-blue-300 to-violet-600 px-10 py-2">Visit Site</button>
-                <Link href='/' className="px-10 py-2">Code</Link>
-              </div>
-            </div>
-            <div className="p-4 border max-w-sm">
-              <Image height={16} width={16} className="w-72 h-56 " src="" alt="" />
-              <div className="text-start mt-4">
-                <h3 className="text-lg font-semibold">AposentaEu</h3>
-                <p>A project to calculate social previdence. Create from scratch, integrated with payment system.</p>
-              </div>
-              <div className="flex mt-4 gap-2">
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Next.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Node.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Postgress</p>
-              </div>
-              <div className="mt-8">
-                <button className="rounded-sm border border-gray-500 bg-gradient-to-br from-blue-300 to-violet-600 px-10 py-2">Visit Site</button>
-                <Link href={'/'} className="px-10 py-2">Code</Link>
-              </div>
-            </div>
+            {myProjects.map(project => {
+                return (
+                  <MyProject project={project}  />
+                )
+              })
+            }
           </div>
         </div>
       </div> 
+      {/*######################### Contact Me ######################### */}
+      <div className="relative w-full h-[32rem] bg-black bg-center bg-no-repeat text-center text-white flex items-center">
+        <div className="max-w-screen-xl w-full m-auto">
+          <div className="relative w-full flex items-center justify-between">
+            <motion.div 
+              viewport={{ once: true }}
+              whileInView={{x: [-100, 0], opacity: [0, 1], offset: ["end end", "end end"]}}
+              transition={{duration: 0.5, delay:0.25}}
+            >
+              <h2 className="font-bold text-[100px] uppercase text-neutral-800 leading-none font-inter">Let's work <br />together</h2>
+            </motion.div>
+            <div className="socialMedia w-40 h-40 grid grid-cols-3 grid-rows-3 justify-center border border-purple-600 rounded-full">
+              <Link href={''} className="ml-2 mt-2 col-start-2">
+                <GithubLogo size={40} />
+              </Link>
+              <Link href={''} className="ml-2 mt-2 row-start-2">
+                <LinkedinLogo size={40}  />
+              </Link>
+              <Link href={''} className="ml-2 mt-2 row-start-2 col-start-3">
+                <WhatsappLogo size={40}  />   
+              </Link>
+              <Link href={''} className="ml-2 mt-2 row-start-3 col-start-2">
+                <EnvelopeSimple size={40}  />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
 
-
-{/* <div className="relative w-full h-screen bg-black bg-no-repeat bg-cover text-center text-white">
-        <div className="max-w-screen-xl m-auto">
-          <div className="relative w-fit">
-            <h2 className="font-bold text-[140px] uppercase text-neutral-800 leading-none">Projects</h2>
-            <p className="absolute bottom-0 right-0 mb-6 mr-4 text-xl font-medium text-neutral-200">Take a look at my projects</p>
-          </div>
-          <div className="flex items-center justify-center mt-12 gap-3">
-            <div className="p-4 border max-w-sm">
-              <Image height={16} width={16} className="w-72 h-56 " src="./public/user.jpg" alt="">
-              <div className="text-start mt-4">
-                <h3 className="text-lg font-semibold">AposentaEu</h3>
-                <p>A project to calculate social previdence. Create from scratch, integrated with payment system.</p>
-              </div>
-              <div className="flex mt-4 gap-2">
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Next.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Node.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Postgress</p>
-              </div>
-              <div className="mt-8">
-                <button className="rounded-sm border border-gray-500 bg-gradient-to-br from-blue-300 to-violet-600 px-10 py-2">Visit Site</button>
-                <a className="px-10 py-2">Code</a>
-              </div>
-            </div>
-            <div className="p-4 border max-w-sm">
-              <Image height={16} width={16} className="w-72 h-56 " src="./public/user.jpg" alt="">
-              <div className="text-start mt-4">
-                <h3 className="text-lg font-semibold">AposentaEu</h3>
-                <p>A project to calculate social previdence. Create from scratch, integrated with payment system.</p>
-              </div>
-              <div className="flex mt-4 gap-2">
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Next.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Node.js</p>
-                <p className="py-[0.5px] px-2 bg-purple-400 bg-opacity-40 rounded-xl">Postgress</p>
-              </div>
-              <div className="mt-8">
-                <button className="rounded-sm border border-gray-500 bg-gradient-to-br from-blue-300 to-violet-600 px-10 py-2">Visit Site</button>
-                <a className="px-10 py-2">Code</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}

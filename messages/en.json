@@ -1,0 +1,14 @@
+{
+  "Index": {
+    "title": "Hi, I'm Bruno Ferreira Web3 fullstack developer",
+    "skillsPage": "Skills",
+    "projectPage": "Projects",
+    "aposentaEu":  {
+      "description": "A project to calculate social security. Create from scratch, integrated with payment system."
+    },
+    "Amaz": {
+      "description": ""
+    },
+    "contactMe": "Let's work <br />together"
+  }
+}
