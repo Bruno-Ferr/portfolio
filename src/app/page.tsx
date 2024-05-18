@@ -112,8 +112,9 @@ export default function Home() {
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit">
             <motion.div 
-              viewport={{ once: true }}
-              animate={{x: [-100, 0], opacity: [0, 1], offset: ["end end", "end end"]}}
+              viewport={{ once: true, amount: 1 }}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
               <h2 className="font-bold text-[140px] uppercase text-neutral-800 leading-none">Skills</h2>
@@ -138,7 +139,8 @@ export default function Home() {
           <div className="relative w-fit">
           <motion.div 
             viewport={{ once: true }}
-            whileInView={{x: [-100, 0], opacity: [0, 1], offset: ["end end", "end end"]}}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
             transition={{duration: 0.5, delay:0.25}}
           >
             <h2 className="font-bold text-[140px] uppercase text-neutral-800 leading-none font-inter">Projects</h2>
@@ -165,20 +167,27 @@ export default function Home() {
             >
               <h2 className="font-bold text-[100px] uppercase text-neutral-800 leading-none font-inter">Let's work <br />together</h2>
             </motion.div>
-            <div className="socialMedia w-40 h-40 grid grid-cols-3 grid-rows-3 justify-center border border-purple-600 rounded-full">
-              <Link href={''} className="ml-2 mt-2 col-start-2">
-                <GithubLogo size={40} />
-              </Link>
-              <Link href={''} className="ml-2 mt-2 row-start-2">
-                <LinkedinLogo size={40}  />
-              </Link>
-              <Link href={''} className="ml-2 mt-2 row-start-2 col-start-3">
-                <WhatsappLogo size={40}  />   
-              </Link>
-              <Link href={''} className="ml-2 mt-2 row-start-3 col-start-2">
-                <EnvelopeSimple size={40}  />
-              </Link>
-            </div>
+            <motion.div 
+              viewport={{ once: true }}
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{y: 0, opacity: 1, offset: ["end end", "end end"]}}
+              transition={{duration: 0.5, delay:0.25}}
+            >
+              <div className="socialMedia w-40 h-40 grid grid-cols-3 grid-rows-3 justify-center border border-purple-600 rounded-full">
+                <Link href={''} className="ml-2 mt-2 col-start-2">
+                  <GithubLogo size={40} />
+                </Link>
+                <Link href={''} className="ml-2 mt-2 row-start-2">
+                  <LinkedinLogo size={40}  />
+                </Link>
+                <Link href={''} className="ml-2 mt-2 row-start-2 col-start-3">
+                  <WhatsappLogo size={40}  />   
+                </Link>
+                <Link href={''} className="ml-2 mt-2 row-start-3 col-start-2">
+                  <EnvelopeSimple size={40}  />
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

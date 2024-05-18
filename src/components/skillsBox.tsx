@@ -25,7 +25,7 @@ export default function SkillBox({image, skillName, isVertical, additionalClass}
             visibleH: { height: "0%", transitionEnd: {display: "none", opacity: 0}},
         }}
         initial={isVertical ? "hiddenV" : "hiddenH"}
-        animate={isVertical ? "visibleV" : "visibleH"}
+        whileInView={isVertical ? "visibleV" : "visibleH"}
         transition={{
           duration: 0.5, ease: 'easeIn'
         }}
