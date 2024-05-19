@@ -22,6 +22,7 @@ export default function MyProject({project}: MyProjectProps) {
       initial={{ y: 100, opacity: 0 }}
       whileInView={{y: 0, opacity: 1, offset: ["end end", "end end"]}}
       transition={{duration: 0.5, delay:0.25}}
+      key={project.github}
     >
       <div className="p-4 border max-w-sm h-[36rem] flex flex-col justify-between">
         <Image src={project.img} objectFit="contain" alt={project.name} />

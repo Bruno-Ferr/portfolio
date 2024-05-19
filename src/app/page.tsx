@@ -16,6 +16,7 @@ import aposentaEu from '@/../public/AposentaEu-login.png'
 import SkillBox from "@/components/skillsBox";
 import MyProject from "@/components/myProjects";
 import { EnvelopeSimple, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { toast } from "react-toastify";
 
 const skillList = [{
   image: img1,
@@ -63,11 +64,16 @@ const myProjects = [{
   description: "A web3 project within a loyalty contract, E20Token created from scratch.",
   techs: ["Next.js", "Typescript", "Node", "Hardhat", "Solidity", "TailwindCSS"],
   site: "",
-  github: "https://github.com/Bruno-Ferr/aposentaEuClient",
+  github: "https://github.com/Bruno-Ferr/AmazRecreated",
   img: aposentaEu,
 }]
 
 export default function Home() {
+  function copyText(entryText: string){
+    navigator.clipboard.writeText(entryText);
+    toast.success('E-mail copied to clipboard', { theme: 'colored', position: 'bottom-center' })
+  }
+  
   return (
     <main>
       <div className="background w-full h-screen bg-no-repeat bg-cover flex items-center relative">
@@ -148,7 +154,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center mt-12 gap-3">
             {myProjects.map(project => {
                 return (
-                  <MyProject project={project}  />
+                  <MyProject project={project} key={project.github} />
                 )
               })
             }
@@ -173,18 +179,18 @@ export default function Home() {
               transition={{duration: 0.5, delay:0.25}}
             >
               <div className="socialMedia w-40 h-40 mt-8 md:mt-0 grid grid-cols-3 grid-rows-3 justify-center border border-purple-600 rounded-full">
-                <Link href={''} className="ml-2 mt-2 col-start-2">
+                <Link href={'https://github.com/Bruno-Ferr'} className="ml-2 mt-2 col-start-2">
                   <GithubLogo size={40} />
                 </Link>
-                <Link href={''} className="ml-2 mt-2 row-start-2">
+                <Link href={'https://www.linkedin.com/in/bruno-ferreira-346446196/'} className="ml-2 mt-2 row-start-2">
                   <LinkedinLogo size={40}  />
                 </Link>
-                <Link href={''} className="ml-2 mt-2 row-start-2 col-start-3">
+                <Link href={'https://wa.me/5511942983604'} className="ml-2 mt-2 row-start-2 col-start-3">
                   <WhatsappLogo size={40}  />   
                 </Link>
-                <Link href={''} className="ml-2 mt-2 row-start-3 col-start-2">
+                <button onClick={() => copyText('fbruno233@gmail.com')} className="ml-2 mt-2 row-start-3 col-start-2">
                   <EnvelopeSimple size={40}  />
-                </Link>
+                </button>
               </div>
             </motion.div>
           </div>
