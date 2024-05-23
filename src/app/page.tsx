@@ -62,11 +62,11 @@ const myProjects = [{
   img: aposentaEu,
 }, {
   name: "Loyalty App",
-  description: "A web3 project within a loyalty contract, E20Token created from scratch.",
+  description: "A web3 project within a loyalty contract, E20Token created from scratch. (Not finished yet)",
   techs: ["Next.js", "Typescript", "Node", "Hardhat", "Solidity", "TailwindCSS"],
   site: "",
   github: "https://github.com/Bruno-Ferr/AmazRecreated",
-  img: aposentaEu,
+  img: Loyalty,
 }]
 
 export default function Home() {
