@@ -13,6 +13,7 @@ import img6 from '@/../public/icon _MySQL_.svg'
 import img7 from '@/../public/icon _tailwindcss_.svg'
 import img8 from '@/../public/icon _ethereum_.svg'
 import aposentaEu from '@/../public/AposentaEu-login.png'
+import Loyalty from '@/../public/Loyalty.png'
 import SkillBox from "@/components/skillsBox";
 import MyProject from "@/components/myProjects";
 import { EnvelopeSimple, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
