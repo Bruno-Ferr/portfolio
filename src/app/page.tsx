@@ -57,7 +57,7 @@ const myProjects = [{
   name: "AposentaEu",
   description: "A project to calculate social security. Create from scratch, integrated with payment system.",
   techs: ["Next.js", "Typescript", "Node", "MySQL", "Stripe"],
-  site: "",
+  site: "https://aposenta-eu-client.vercel.app/",
   github: "https://github.com/Bruno-Ferr/aposentaEuClient",
   img: aposentaEu,
 }, {
