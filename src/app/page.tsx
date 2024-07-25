@@ -8,15 +8,16 @@ import img1 from '@/../public/icon _next js_.png'
 import img2 from '@/../public/icon _nodejs_.svg'
 import img3 from '@/../public/icon _react_.svg'
 import img4 from '@/../public/icon _solidity_.svg'
-import img5 from '@/../public/icon_typescript.png'
+import img5 from '@/../public/icons8-typescript.png'
 import img6 from '@/../public/icon _MySQL_.svg'
 import img7 from '@/../public/icon _tailwindcss_.svg'
 import img8 from '@/../public/icon _ethereum_.svg'
+import bro from '@/../public/bro.png'
 import aposentaEu from '@/../public/AposentaEu-login.png'
 import Loyalty from '@/../public/Loyalty.png'
 import SkillBox from "@/components/skillsBox";
 import MyProject from "@/components/myProjects";
-import { EnvelopeSimple, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { ArrowUpRight, EnvelopeSimple, FileText, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
 import { toast } from "react-toastify";
 
 const skillList = [{
@@ -45,25 +46,27 @@ const skillList = [{
   isVertical: true
 },{
   image: img7,
-  skillName: 'Ethereum',
+  skillName: 'Tailwind',
   isVertical: false
 },{
   image: img8,
-  skillName: 'Tailwind',
+  skillName: 'Ethereum',
   isVertical: true
 },]
 
 const myProjects = [{
   name: "AposentaEu",
-  description: "A project to calculate social security. Create from scratch, integrated with payment system.",
-  techs: ["Next.js", "Typescript", "Node", "MySQL", "Stripe"],
-  site: "https://aposenta-eu-client.vercel.app/",
+  description: "Project to calculate social security. Integrated with login, authorization and payment system.",
+  techs: ["Typescript", "Node", "MySQL"],
+  date: "mar - 24",
+  site: "https://aposentaeu.com.br/",
   github: "https://github.com/Bruno-Ferr/aposentaEuClient",
   img: aposentaEu,
 }, {
   name: "Loyalty App",
-  description: "A web3 project within a loyalty contract, E20Token created from scratch. (Not finished yet)",
-  techs: ["Next.js", "Typescript", "Node", "Hardhat", "Solidity", "TailwindCSS"],
+  description: "Web3 project within a smart contract, ERC20Token, cripto payments and loyalty reward system.",
+  techs: ["Next.js", "Solidity"],
+  date: "jun - 24",
   site: "",
   github: "https://github.com/Bruno-Ferr/AmazRecreated",
   img: Loyalty,
@@ -114,8 +117,26 @@ export default function Home() {
         </div>
         <div className="lg:w-1/3"></div> 
       </div>
-      {/*######################### Skills ######################### */}
+      {/*######################### About me ######################### */}
       <div className="w-full bg-neutral-900 bg-no-repeat bg-cover text-white">
+        <div className="max-w-screen-xl m-auto">
+          <div className="flex py-4 md:py-14 lg:py-28 justify-between gap-28">
+            <Image src={bro} alt="hands-typing" height={417} width={488} />
+            <div className="w-full">
+              <div>
+                <p className="text-brand-secondary">About me</p>
+                <h3 className="font-semibold text-3xl mt-2 mb-4">I’m a passionate software developer looking for my first international oppotunity</h3>
+                <p>Beyond coding, I'm a coffee enthusiast, a cat lover, and a self-taught artist who enjoys spending my free time doodling. I am currently seeking opportunities to bring my skills and enthusiasm to a tech company in the United States or Europe and am excited about the prospect of relocating to pursue new challenges.</p>
+              </div>
+              <button className="flex mt-8 gap-2 bg-brand-primary_500 p-4 rounded-md">
+                My Resume <FileText size={22} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      {/*######################### Skills ######################### */}
+      <div className="w-full bg-surface-background bg-no-repeat bg-cover text-white">
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit m-auto md:m-0">
             <motion.div 
@@ -124,7 +145,7 @@ export default function Home() {
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-800 leading-none">Skills</h2>
+              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-surface-secondary leading-none">Skills</h2>
             </motion.div>
           </div>
           <div className="flex p-4 md:p-14 lg:p-28 justify-center">
@@ -140,7 +161,7 @@ export default function Home() {
         </div>
       </div> 
       {/*######################### Projects ######################### */}
-      <div className="relative w-full bg-black bg-no-repeat bg-cover text-center text-white">
+      <div className="relative w-full bg-neutral-900 py-8 text-center text-white">
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit m-auto md:m-0">
             <motion.div 
@@ -149,10 +170,10 @@ export default function Home() {
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-800 leading-none font-inter">Projects</h2>
+              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-700 leading-none font-inter">Projects</h2>
             </motion.div>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-center mt-12 gap-3">
+          <div className="flex flex-col md:flex-row items-center justify-center mt-12 gap-8">
             {myProjects.map(project => {
                 return (
                   <MyProject project={project} key={project.github} />
@@ -163,7 +184,7 @@ export default function Home() {
         </div>
       </div> 
       {/*######################### Contact Me ######################### */}
-      <div className="relative w-full h-[32rem] bg-black bg-center bg-no-repeat text-center text-white flex items-center">
+      <div className="relative w-full h-[32rem] bg-surface-background bg-center bg-no-repeat text-center text-white flex items-center">
         <div className="max-w-screen-xl w-full m-auto">
           <div className="relative w-full flex flex-col md:flex-row items-center justify-between">
             <motion.div 
@@ -171,7 +192,7 @@ export default function Home() {
               whileInView={{x: [-100, 0], opacity: [0, 1], offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold text-7xl md:text-[100px] uppercase text-neutral-800 leading-none font-inter">Let's work <br />together</h2>
+              <h2 className="font-bold text-7xl md:text-[100px] uppercase text-surface-secondary leading-none font-inter">Let's work <br />together</h2>
             </motion.div>
             <motion.div 
               viewport={{ once: true }}

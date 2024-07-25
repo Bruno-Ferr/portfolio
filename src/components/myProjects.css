@@ -1,0 +1,4 @@
+.project:hover .absolute {
+  opacity: 1;
+  pointer-events: auto;
+}
