@@ -1,0 +1,14 @@
+{
+  "Index": {
+    "title": "Hola, soy Bruno Ferreira. Desarrollador Web3 Fullstack",
+    "skillsPage": "Habilidades",
+    "projectPage": "Proyectos",
+    "aposentaEu":  {
+      "description": "Un proyecto para calcular la seguridad social de personas. Con autenticación, planos, lector de pdf y más."
+    },
+    "Amaz": {
+      "description": ""
+    },
+    "contactMe": "Vamos a trabajar <br />juntos"
+  }
+}

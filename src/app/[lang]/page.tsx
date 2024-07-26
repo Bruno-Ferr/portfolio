@@ -2,23 +2,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useAnimate, useInView, usePresence, useScroll, useTransform } from "framer-motion"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatedText } from "@/components/animations/typpingText";
-import img1 from '@/../public/icon _next js_.png'
-import img2 from '@/../public/icon _nodejs_.svg'
-import img3 from '@/../public/icon _react_.svg'
-import img4 from '@/../public/icon _solidity_.svg'
-import img5 from '@/../public/icons8-typescript.png'
-import img6 from '@/../public/icon _MySQL_.svg'
-import img7 from '@/../public/icon _tailwindcss_.svg'
-import img8 from '@/../public/icon _ethereum_.svg'
-import bro from '@/../public/bro.png'
-import aposentaEu from '@/../public/AposentaEu-login.png'
-import Loyalty from '@/../public/Loyalty.png'
+import img1 from '@/icon _next js_.png'
+import img2 from '@/icon _nodejs_.svg'
+import img3 from '@/icon _react_.svg'
+import img4 from '@/icon _solidity_.svg'
+import img5 from '@/icons8-typescript.png'
+import img6 from '@/icon _MySQL_.svg'
+import img7 from '@/icon _tailwindcss_.svg'
+import img8 from '@/icon _ethereum_.svg'
+import bro from '@/bro.png'
+import aposentaEu from '@/AposentaEu-login.png'
+import Loyalty from '@/Loyalty.png'
+import en from '@/../messages/en.json'
+import es from '@/../messages/es.json'
+import pt from '@/../messages/pt.json'
 import SkillBox from "@/components/skillsBox";
 import MyProject from "@/components/myProjects";
 import { ArrowUpRight, EnvelopeSimple, FileText, GithubLogo, Globe, LinkedinLogo, TelegramLogo, WhatsappLogo } from "@phosphor-icons/react";
 import { toast } from "react-toastify";
+import { Locale } from "../../../i18n.config";
+import { getDictionary } from "../../../get-dictionary";
+import LocaleSwitcher from "@/components/localeSwitcher";
 
 const skillList = [{
   image: img1,
@@ -72,18 +78,52 @@ const myProjects = [{
   img: Loyalty,
 }]
 
-export default function Home() {
+export default function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const [t, setT] = useState<any>(null)
   function copyText(entryText: string){
     navigator.clipboard.writeText(entryText);
     toast.success('E-mail copied to clipboard', { theme: 'colored', position: 'bottom-center' })
   }
+  useEffect(() => {
+    async function callDictionary() {
+      const a = await getDictionary(lang);
+      setT(a)
+    }
+
+    callDictionary()
+  })
   
+
+  // const pathName = usePathname();
+  // const redirectedPathName = (locale: Locale) => {
+  //   if (!pathName) return "/";
+  //   const segments = pathName.split("/");
+  //   segments[1] = locale;
+  //   return segments.join("/");
+  // };
+  function handleChangeLang() {
+
+  }
+
+  if(t === null) {
+    return (
+      <div>
+        Waiting...
+      </div>
+    )
+  }
+
   return (
     <main>
       <div className="background w-full h-screen bg-no-repeat bg-cover flex items-center relative">
         <button className="absolute flex items-center text-lg top-5 right-4 md:right-8 lg:right-[20rem]">
-          <Globe size={28} /> | EN
+          <Globe size={28} /> | {lang}
         </button>
+        <LocaleSwitcher lang={lang} />
         <div className="max-w-screen-xl m-auto">
           <div className="h-fit w-fit py-8 px-2 md:px-4 lg:px-36 bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-5"> 
             <motion.div
@@ -98,7 +138,7 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            <AnimatedText once text={`Hi, I'm Bruno Ferreira Web3 fullstack developer`} el="h2" className="text-6xl font-semibold text-white font-spaceGrotesk" />
+            <AnimatedText once text={t?.Index?.title} el="h2" className="text-6xl font-semibold text-white font-spaceGrotesk" />
             <motion.div
                initial={{y: 20, opacity: 0}}
                viewport={{ once: true }}
