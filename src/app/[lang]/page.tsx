@@ -69,7 +69,7 @@ const myProjects = [{
   github: "https://github.com/Bruno-Ferr/aposentaEuClient",
   img: aposentaEu,
 }, {
-  name: "Loyalty App",
+  name: "Amaz",
   description: "Web3 project within a smart contract, ERC20Token, cripto payments and loyalty reward system.",
   techs: ["Next.js", "Solidity"],
   date: "jun - 24",
@@ -138,7 +138,7 @@ export default function Home({
                 </div>
               </div>
             </motion.div>
-            <AnimatedText once text={t?.Index?.title} el="h2" className="text-6xl font-semibold text-white font-spaceGrotesk" />
+            <AnimatedText once text={t?.Hero?.title} el="h2" className="text-6xl font-semibold text-white font-spaceGrotesk" />
             <motion.div
                initial={{y: 20, opacity: 0}}
                viewport={{ once: true }}
@@ -164,12 +164,12 @@ export default function Home({
             <Image src={bro} alt="hands-typing" height={417} width={488} />
             <div className="w-full">
               <div>
-                <p className="text-brand-secondary">About me</p>
-                <h3 className="font-semibold text-3xl mt-2 mb-4">I’m a passionate software developer looking for my first international oppotunity</h3>
-                <p>Beyond coding, I'm a coffee enthusiast, a cat lover, and a self-taught artist who enjoys spending my free time doodling. I am currently seeking opportunities to bring my skills and enthusiasm to a tech company in the United States or Europe and am excited about the prospect of relocating to pursue new challenges.</p>
+                <p className="text-brand-secondary">{t.About.title}</p>
+                <h3 className="font-semibold text-3xl mt-2 mb-4">{t.About.aboutMe}</h3>
+                <p>{t.About.text}</p>
               </div>
               <button className="flex mt-8 gap-2 bg-brand-primary_500 p-4 rounded-md">
-                My Resume <FileText size={22} />
+                {t.About.resume} <FileText size={22} />
               </button>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function Home({
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-surface-secondary leading-none">Skills</h2>
+              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-surface-secondary leading-none">{t.Skills.title}</h2>
             </motion.div>
           </div>
           <div className="flex p-4 md:p-14 lg:p-28 justify-center">
@@ -210,13 +210,13 @@ export default function Home({
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-700 leading-none font-inter">Projects</h2>
+              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-700 leading-none font-inter">{t.Projects.title}</h2>
             </motion.div>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center mt-12 gap-8">
             {myProjects.map(project => {
                 return (
-                  <MyProject project={project} key={project.github} />
+                  <MyProject project={project} key={project.github} dictionary={t} />
                 )
               })
             }
@@ -232,7 +232,7 @@ export default function Home({
               whileInView={{x: [-100, 0], opacity: [0, 1], offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold text-7xl md:text-[100px] uppercase text-surface-secondary leading-none font-inter">Let's work <br />together</h2>
+              <h2 className="font-bold text-7xl md:text-[100px] uppercase text-surface-secondary leading-none font-inter">{t.Contact.text}</h2>
             </motion.div>
             <motion.div 
               viewport={{ once: true }}

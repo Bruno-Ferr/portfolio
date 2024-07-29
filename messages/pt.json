@@ -1,14 +1,26 @@
 {
-  "Index": {
-    "title": "Oi, eu sou Bruno Ferreira. Desenvolvedor Web3 Fullstack",
-    "skillsPage": "Habilidades",
-    "projectPage": "Projetos",
-    "aposentaEu":  {
-      "description": "Um projeto criado do zero para calcular a previdência social de pessoas com autenticação, planos, leitor de pdf, entre outros."
-    },
+  "Hero": {
+    "title": "Oi, eu sou Bruno Ferreira. Desenvolvedor Web3 Fullstack"
+  },
+  "About": {
+    "title": "Sobre mim",
+    "aboutMe": "",
+    "resume": "Meu currículo"
+  },
+  "Skills": {
+    "title": "Habilidades"
+  },
+  "Projects": {
+    "title": "Projects",
     "Amaz": {
-      "description": ""
+      "description": "Projeto Web3 dentro de um contrato inteligente, token ERC20, pagamentos em criptomoeda e sistema de recompensas por lealdade."
     },
-    "contactMe": "Vamos trabalhar <br />juntos"
+    "Aposentaeu": {
+      "description": "Projeto para calcular a segurança social. Integrado com sistema de login, autorização e pagamento."
+    }
+  },
+  "Contact": {
+    "title": "Contate me",
+    "text": "Vamos trabalhar <br />juntos" 
   }
 }

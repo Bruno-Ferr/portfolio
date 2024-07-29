@@ -15,10 +15,11 @@ type ProjectProps = {
 }
 
 interface MyProjectProps {
-  project: ProjectProps
+  project: ProjectProps,
+  dictionary: any
 }
 
-export default function MyProject({project}: MyProjectProps) {
+export default function MyProject({project, dictionary}: MyProjectProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -42,7 +43,7 @@ export default function MyProject({project}: MyProjectProps) {
             </div>
             <div className="flex flex-col items-start gap-2">
               <h2 className="text-start">{project.name}</h2>
-              <p className="text-start">{project.description}</p>
+              <p className="text-start">{dictionary.Projects[project.name].description}</p>
             </div>
           </div>
         </div>
