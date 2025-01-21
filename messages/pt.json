@@ -15,8 +15,11 @@
     "Amaz": {
       "description": "Projeto Web3 dentro de um contrato inteligente, token ERC20, pagamentos em criptomoeda e sistema de recompensas por lealdade."
     },
-    "Aposentaeu": {
+    "AposentaEu": {
       "description": "Projeto para calcular a segurança social. Integrado com sistema de login, autorização e pagamento."
+    },
+    "BuJo": {
+      "description": "Projeto de ToDo list, inspirado no método de organização pessoal conhecido como Bullet Journal desenvolvido por Ryder Carroll. Usando arquitetura de micro serviços."
     }
   },
   "Contact": {

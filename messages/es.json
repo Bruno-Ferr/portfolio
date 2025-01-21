@@ -5,7 +5,7 @@
   "About": {
     "title": "Sobre",
     "aboutMe": "",
-    "resume": "Mi cv" //Curriculo?
+    "resume": "Mi cv"
   },
   "Skills": {
     "title": "Habilidades"
@@ -15,12 +15,15 @@
     "Amaz": {
       "description": "Proyecto Web3 dentro de un contrato inteligente, token ERC20, pagos en criptomonedas y sistema de recompensas por lealtad."
     },
-    "Aposentaeu": {
+    "AposentaEu": {
       "description": "Proyecto para calcular la seguridad social. Integrado con sistema de inicio de sesión, autorización y pago."
+    },
+    "BuJo": {
+      "description": "Aplicacion "
     }
   },
   "Contact": {
-    "title": "Contatos", //Certo?
+    "title": "Contatos",
     "text": "Vamos a trabajar <br />juntos" 
   }
 }

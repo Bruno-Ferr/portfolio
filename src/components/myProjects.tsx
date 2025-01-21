@@ -22,6 +22,9 @@ interface MyProjectProps {
 export default function MyProject({project, dictionary}: MyProjectProps) {
   const [isHovered, setIsHovered] = useState(false);
 
+  console.log(project)
+  console.log(dictionary)
+
   return (
     <motion.div 
       viewport={{ once: true }}

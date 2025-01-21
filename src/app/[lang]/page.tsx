@@ -4,17 +4,20 @@ import Link from "next/link";
 import { AnimatePresence, motion, useAnimate, useInView, usePresence, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
 import { AnimatedText } from "@/components/animations/typpingText";
-import img1 from '@/icon _next js_.png'
-import img2 from '@/icon _nodejs_.svg'
-import img3 from '@/icon _react_.svg'
-import img4 from '@/icon _solidity_.svg'
-import img5 from '@/icons8-typescript.png'
-import img6 from '@/icon _MySQL_.svg'
-import img7 from '@/icon _tailwindcss_.svg'
-import img8 from '@/icon _ethereum_.svg'
+import node from '@/icon _nodejs_.svg'
+import react from '@/icon _react_.svg'
+import angular from '@/icons8-angular-100.png'
+import java from '@/icons8-java-100.png'
+import typescript from '@/icons8-typescript.png'
+import mysql from '@/icon _MySQL_.svg'
+import tailwind from '@/icon _tailwindcss_.svg'
+import mongo from '@/icons8-mongo-db.png'
+import aws from '@/icons8-aws.png'
+import docker from '@/icons8-docker.png'
 import bro from '@/bro.png'
 import aposentaEu from '@/AposentaEu-login.png'
 import Loyalty from '@/Loyalty.png'
+import Bujo from '@/BuJo.jpeg'
 import en from '@/../messages/en.json'
 import es from '@/../messages/es.json'
 import pt from '@/../messages/pt.json'
@@ -27,44 +30,53 @@ import { getDictionary } from "../../../get-dictionary";
 import LocaleSwitcher from "@/components/localeSwitcher";
 
 const skillList = [{
-  image: img1,
-  skillName: 'Next.js',
-  isVertical: false
-},{
-  image: img2,
+  image: node,
   skillName: 'Node.js',
   isVertical: true
 },{
-  image: img3,
+  image: react,
   skillName: 'React',
   isVertical: false
 },{
-  image: img4,
-  skillName: 'Solidity',
+  image: angular,
+  skillName: 'Angular',
   isVertical: true
 },{
-  image: img5,
+  image: typescript,
   skillName: 'Typescript',
   isVertical: false
 },{
-  image: img6,
+  image: mysql,
   skillName: 'MySQL',
   isVertical: true
 },{
-  image: img7,
+  image: tailwind,
   skillName: 'Tailwind',
   isVertical: false
-},{
-  image: img8,
-  skillName: 'Ethereum',
+}, {
+  image: java,
+  skillName: 'Java',
   isVertical: true
-},]
+}, {
+  image: mongo,
+  skillName: 'Mongo DB',
+  isVertical: false
+}, {
+  image: aws,
+  skillName: 'AWS',
+  isVertical: true
+}, {
+  image: docker,
+  skillName: 'Docker',
+  isVertical: false
+},
+]
 
 const myProjects = [{
   name: "AposentaEu",
   description: "Project to calculate social security. Integrated with login, authorization and payment system.",
   techs: ["Typescript", "Node", "MySQL"],
-  date: "mar - 24",
+  date: "Mar - 24",
   site: "https://aposentaeu.com.br/",
   github: "https://github.com/Bruno-Ferr/aposentaEuClient",
   img: aposentaEu,
@@ -72,10 +84,18 @@ const myProjects = [{
   name: "Amaz",
   description: "Web3 project within a smart contract, ERC20Token, cripto payments and loyalty reward system.",
   techs: ["Next.js", "Solidity"],
-  date: "jun - 24",
+  date: "Jun - 24",
   site: "",
   github: "https://github.com/Bruno-Ferr/AmazRecreated",
   img: Loyalty,
+}, {
+  name: "BuJo",
+  description: "ToDo list project, inspired by the personal organization method called Bullet journal developed by Ryan Carroll. Using microservices architect.",
+  techs: ["Angular.js", "Nest.js", "Java", "Kafka", "Docker"],
+  date: "Jan - 25",
+  site: "",
+  github: "https://github.com/Bruno-Ferr/tasksysteminterface",
+  img: Bujo,
 }]
 
 export default function Home({
@@ -191,7 +211,7 @@ export default function Home({
           <div className="flex p-4 md:p-14 lg:p-28 justify-center">
             <div className="grid grid-cols-5 gap-2 lg:gap-6 items-center max-w-screen-lg m-2 md:m-auto">
               {skillList.map((skill, index) => {
-                const additionalClass = index == 5 ? "col-start-2" : "";
+                const additionalClass = index == 5 ? "" : "";
                 return (
                   <SkillBox image={skill.image} skillName={skill.skillName} isVertical={skill.isVertical} additionalClass={additionalClass}/>
                 )
