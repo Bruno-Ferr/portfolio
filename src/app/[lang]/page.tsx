@@ -18,6 +18,8 @@ import bro from '@/bro.png'
 import aposentaEu from '@/AposentaEu-login.png'
 import Loyalty from '@/Loyalty.png'
 import Bujo from '@/BuJo.jpeg'
+import Antidots from '@/AntidotsWebsite.png'
+import Silapay from '@/SilapayWebsite.png'
 import en from '@/../messages/en.json'
 import es from '@/../messages/es.json'
 import pt from '@/../messages/pt.json'
@@ -73,29 +75,29 @@ const skillList = [{
 ]
 
 const myProjects = [{
+  name: "Silapay",
+  description: "Landing page, Login, SignUp and Dashboard for fintech Silapay. Also worked on the API development with Nest.JS, developing Credit-Card, Pix and Billet transactions and many other logics and business rules.",
+  techs: ["Vue", "Node", "Nest.js", "React Native", "MariaDB", "AWS", "Kubernetes"],
+  date: "Ago - 25",
+  site: "https://silapay.pro/",
+  github: "",
+  img: Silapay,
+}, {
+  name: "Antidots",
+  description: "Simple landing page for Antidots",
+  techs: ["Next.js"],
+  date: "Jul - 25",
+  site: "https://www.antidots.com.br/pt",
+  github: "",
+  img: Antidots,
+}, {
   name: "AposentaEu",
-  description: "Project to calculate social security. Integrated with login, authorization and payment system.",
-  techs: ["Typescript", "Node", "MySQL"],
-  date: "Mar - 24",
+  description: "ToDo list project, inspired by the personal organization method called Bullet journal developed by Ryan Carroll. Using microservices architect.",
+  techs: ["Next.js", "Express", "Node", "Docker"],
+  date: "Mai - 24",
   site: "https://aposentaeu.com.br/",
   github: "https://github.com/Bruno-Ferr/aposentaEuClient",
   img: aposentaEu,
-}, {
-  name: "Amaz",
-  description: "Web3 project within a smart contract, ERC20Token, cripto payments and loyalty reward system.",
-  techs: ["Next.js", "Solidity"],
-  date: "Jun - 24",
-  site: "",
-  github: "https://github.com/Bruno-Ferr/AmazRecreated",
-  img: Loyalty,
-}, {
-  name: "BuJo",
-  description: "ToDo list project, inspired by the personal organization method called Bullet journal developed by Ryan Carroll. Using microservices architect.",
-  techs: ["Angular.js", "Nest.js", "Java", "Kafka", "Docker"],
-  date: "Jan - 25",
-  site: "",
-  github: "https://github.com/Bruno-Ferr/tasksysteminterface",
-  img: Bujo,
 }]
 
 export default function Home({
@@ -137,8 +139,11 @@ export default function Home({
     )
   }
 
+  const aboutMeText = t.About.aboutMe;
+  const paragraphs = aboutMeText.split('.-').filter(Boolean);
+
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <div className="background w-full h-screen bg-no-repeat bg-cover flex items-center relative">
         <button className="absolute flex items-center text-lg top-5 right-4 md:right-8 lg:right-[20rem]">
           <Globe size={28} /> | {lang}
@@ -179,24 +184,24 @@ export default function Home({
       </div>
       {/*######################### About me ######################### */}
       <div className="w-full bg-neutral-900 bg-no-repeat bg-cover text-white">
-        <div className="max-w-screen-xl m-auto">
+        <div className="max-w-screen-sm lg:max-w-screen-xl m-auto bg-blue-700">
           <div className="flex py-4 md:py-14 lg:py-28 justify-between gap-28">
-            <Image src={bro} alt="hands-typing" height={417} width={488} />
-            <div className="w-full">
+            <Image src={bro} alt="hands-typing" height={417} width={488} className="hidden lg:flex" />
+            <div className="w-[90%] mx-auto">
               <div>
                 <p className="text-brand-secondary">{t.About.title}</p>
-                <h3 className="font-semibold text-3xl mt-2 mb-4">{t.About.aboutMe}</h3>
-                <p>{t.About.text}</p>
+                <div>
+                  {paragraphs.map((text: string, idx: number) => (
+                    <p key={idx} className="font-semibold text-xl mt-2 mb-4">{text.trim()}{text.endsWith('.') ? '' : '.'}</p>
+                  ))}
+                </div>
               </div>
-              <button className="flex mt-8 gap-2 bg-brand-primary_500 p-4 rounded-md">
-                {t.About.resume} <FileText size={22} />
-              </button>
             </div>
           </div>
         </div>
       </div> 
       {/*######################### Skills ######################### */}
-      <div className="w-full bg-surface-background bg-no-repeat bg-cover text-white">
+      <div className="w-full bg-surface-background py-8 bg-no-repeat bg-cover text-white">
         <div className="max-w-screen-xl m-auto">
           <div className="relative w-fit m-auto md:m-0">
             <motion.div 
@@ -205,7 +210,7 @@ export default function Home({
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-surface-secondary leading-none">{t.Skills.title}</h2>
+              <h2 className="font-bold items-center text-5xl lg:text-[140px] uppercase text-surface-secondary leading-none">{t.Skills.title}</h2>
             </motion.div>
           </div>
           <div className="flex p-4 md:p-14 lg:p-28 justify-center">
@@ -230,7 +235,7 @@ export default function Home({
               whileInView={{x: 0, opacity: 1, offset: ["end end", "end end"]}}
               transition={{duration: 0.5, delay:0.25}}
             >
-              <h2 className="font-bold items-center text-7xl lg:text-[140px] uppercase text-neutral-700 leading-none font-inter">{t.Projects.title}</h2>
+              <h2 className="font-bold items-center text-5xl lg:text-[140px] uppercase text-neutral-700 leading-none font-inter">{t.Projects.title}</h2>
             </motion.div>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center mt-12 gap-8">
@@ -264,7 +269,7 @@ export default function Home({
                 <Link href={'https://github.com/Bruno-Ferr'} className="ml-2 mt-2 col-start-2">
                   <GithubLogo size={40} />
                 </Link>
-                <Link href={'https://www.linkedin.com/in/bruno-ferreira-346446196/'} className="ml-2 mt-2 row-start-2">
+                <Link href={'https://www.linkedin.com/in/bferreira-dev/'} className="ml-2 mt-2 row-start-2">
                   <LinkedinLogo size={40}  />
                 </Link>
                 <Link href={'https://wa.me/5511942983604'} className="ml-2 mt-2 row-start-2 col-start-3">

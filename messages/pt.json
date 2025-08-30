@@ -1,10 +1,10 @@
 {
   "Hero": {
-    "title": "Oi, eu sou Bruno Ferreira. Desenvolvedor Web3 Fullstack"
+    "title": "Oi, eu sou Bruno Ferreira. Desenvolvedor de Software"
   },
   "About": {
     "title": "Sobre mim",
-    "aboutMe": "",
+    "aboutMe": "Eu acredito que a tecnologia deve ser mais do que funcional.- Ela deve ser elegante, simples e transformadora. Como engenheiro de software, meu trabalho não é apenas escrever código, mas criar experiências.- Resolver problemas complexos me fascina, mas o que realmente me move é transformar esses desafios em soluções que fazem sentido para as pessoas.- Meu objetivo é simples: criar o futuro, um projeto de cada vez.",
     "resume": "Meu currículo"
   },
   "Skills": {
@@ -12,18 +12,18 @@
   },
   "Projects": {
     "title": "Projects",
-    "Amaz": {
-      "description": "Projeto Web3 dentro de um contrato inteligente, token ERC20, pagamentos em criptomoeda e sistema de recompensas por lealdade."
+    "Antidots": {
+      "description": "Simples landing page para Antidots"
+    },
+    "Silapay": {
+      "description": "Landing page, Login, SignUp e Dashboard para fintech Silapay. Também trabalhei no desenvolvimento da API com Nest.JS, desenvolvendo transações de Cartão de Crédito, Pix e Boleto, em muitas outras lógicas e regras de negócio."
     },
     "AposentaEu": {
       "description": "Projeto para calcular a segurança social. Integrado com sistema de login, autorização e pagamento."
-    },
-    "BuJo": {
-      "description": "Projeto de ToDo list, inspirado no método de organização pessoal conhecido como Bullet Journal desenvolvido por Ryder Carroll. Usando arquitetura de micro serviços."
     }
   },
   "Contact": {
     "title": "Contate me",
-    "text": "Vamos trabalhar <br />juntos" 
+    "text": "Vamos trabalhar juntos" 
   }
 }

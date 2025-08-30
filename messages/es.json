@@ -1,10 +1,10 @@
 {
   "Hero": {
-    "title": "Hola, soy Bruno Ferreira. Desarrollador Web3 Fullstack"
+    "title": "Hola, soy Bruno Ferreira. Desarrollador de Software"
   },
   "About": {
     "title": "Sobre",
-    "aboutMe": "",
+    "aboutMe": "Creo que la tecnología debe ser más que funcional.- Debe ser elegante, simple y transformadora. Como ingeniero de software, mi trabajo no es solo escribir código, sino crear experiencias.- Me fascina resolver problemas complejos, pero lo que realmente me impulsa es convertir esos desafíos en soluciones que tengan sentido para las personas.- Mi objetivo es simple: construir el futuro, un proyecto a la vez.",
     "resume": "Mi cv"
   },
   "Skills": {
@@ -12,18 +12,18 @@
   },
   "Projects": {
     "title": "Projects",
-    "Amaz": {
-      "description": "Proyecto Web3 dentro de un contrato inteligente, token ERC20, pagos en criptomonedas y sistema de recompensas por lealtad."
+    "Antidots": {
+      "description": "Página de aterrizaje simple para Antidots"
+    },
+    "Silapay": {
+      "description": "Aplicacion de fintech con funcionalidades de Login, SignUp y Dashboard. También trabajé en el desarrollo de la API con Nest.JS, desarrollando transacciones de tarjeta de crédito, Pix y Billet, y muchas otras lógicas y reglas de negocio."
     },
     "AposentaEu": {
       "description": "Proyecto para calcular la seguridad social. Integrado con sistema de inicio de sesión, autorización y pago."
-    },
-    "BuJo": {
-      "description": "Aplicacion "
     }
   },
   "Contact": {
     "title": "Contatos",
-    "text": "Vamos a trabajar <br />juntos" 
+    "text": "Vamos a trabajar juntos" 
   }
 }

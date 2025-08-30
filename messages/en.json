@@ -1,10 +1,10 @@
 {
   "Hero": {
-    "title": "Hi, I'm Bruno Ferreira Web3 fullstack developer"
+    "title": "Hi, I'm Bruno Ferreira software developer"
   },
   "About": {
     "title": "About me",
-    "aboutMe": "I’m a passionate software developer looking for my first international oppotunity",
+    "aboutMe": "I believe technology should be more than functional.- It should be elegant, simple, and transformative. As a software engineer, my job is not just to write code but to create experiences.- Solving complex problems fascinates me, but what truly drives me is turning these challenges into solutions that make sense for people.- My goal is simple: to build the future, one project at a time.",
     "resume": "My Resume"
   },
   "Skills": {
@@ -12,14 +12,14 @@
   },
   "Projects": {
     "title": "Projects",
-    "Amaz": {
-      "description": "Web3 project within a smart contract, ERC20Token, cripto payments and loyalty reward system."
+    "Antidots": {
+      "description": "Simple landing page for Antidots"
+    },
+    "Silapay": {
+      "description": "Landing page, Login, SignUp and Dashboard for fintech Silapay. Also worked on the API development with Nest.JS, developing Credit-Card, Pix and Billet transactions and many other logics and business rules."
     },
     "AposentaEu": {
       "description": "Project to calculate social security. Integrated with login, authorization and payment system."
-    },
-    "BuJo": {
-      "description": "ToDo list project, inspired by the personal organization method called Bullet journal developed by Ryan Carroll. Using microservices architect."
     }
   },
   "Contact": {
