@@ -184,7 +184,7 @@ export default function Home({
       </div>
       {/*######################### About me ######################### */}
       <div className="w-full bg-neutral-900 bg-no-repeat bg-cover text-white">
-        <div className="max-w-screen-sm lg:max-w-screen-xl m-auto bg-blue-700">
+        <div className="max-w-screen-sm lg:max-w-screen-xl m-auto">
           <div className="flex py-4 md:py-14 lg:py-28 justify-between gap-28">
             <Image src={bro} alt="hands-typing" height={417} width={488} className="hidden lg:flex" />
             <div className="w-[90%] mx-auto">
@@ -192,7 +192,7 @@ export default function Home({
                 <p className="text-brand-secondary">{t.About.title}</p>
                 <div>
                   {paragraphs.map((text: string, idx: number) => (
-                    <p key={idx} className="font-semibold text-xl mt-2 mb-4">{text.trim()}{text.endsWith('.') ? '' : '.'}</p>
+                    <p key={idx} className="font-semibold text-xl lg:text-2xl mt-2 mb-4">{text.trim()}{text.endsWith('.') ? '' : '.'}</p>
                   ))}
                 </div>
               </div>
